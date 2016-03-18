@@ -1,17 +1,28 @@
+<% if @message && @message.errors.any? %>
+  <div>
+    <strong>Some issues with your message, please fix them:</strong>
+    <ul>
+      <% @message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <form action='/messages', method='post'>
   <div>
     <label>Author:</label>
-    <input text="text" name="author">
+    <input text="text" name="author" value="<%= @message && @message.author %>">
   </div>
 
   <div>
     <label>Subject:</label>
-    <input text="text" name="title">
+    <input text="text" name="title" value="<%= @message && @message.title %>">
   </div>
 
   <div>
     <label>Content:</label>
-    <input text="text" name="content">
+    <input text="text" name="content" value="<%= @message && @message.content %>">
   </div>
 
   <div>
