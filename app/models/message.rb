@@ -3,6 +3,6 @@ class Message < ActiveRecord::Base
   validate :url_checker, if: :url
 
   def url_checker
-    errors.add(:invalid_url, ": url is invalid") unless url =~ URI::regexp
+    errors.add(:invalid_url, ": url is invalid") unless url =~ URI::regexp or url == ""
   end
 end

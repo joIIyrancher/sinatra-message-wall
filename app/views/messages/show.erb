@@ -11,8 +11,17 @@
 </p>
 
 <p>
-  <%= @message.created_at.to_s(:long) %>
+  <%= @message.created_at %>
 </p>
 
 <hr/>
+
+<h3>Other posts from this author</h3>
+
+<% @messages.reverse.each do |message| %>
+
+  <p><%= message.content %>  --  <%= message.created_at %> </p>
+
+<% end %>
+
 <a href="/messages">Back to All Messages</a>
