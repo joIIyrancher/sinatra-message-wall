@@ -2,9 +2,10 @@
 
 <% @messages.each do |message| %>
   <div class="message">  
-    <h3><a href="/messages/<%= message.id %>"><%= message.title %></a> <small>(by: <%= message.author %>)</small></h3>
+<!--     <h3><a href="/messages/<%= message.id %>"><%= message.title %></a> <small></small></h3> -->
     <p>
-      <%= message.content %>
+      <%= message.content %> (by: <%= message.author %>)
+      <hr>
     </p>
   </div>
 <% end %>
