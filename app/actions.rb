@@ -23,7 +23,9 @@ post '/messages' do
     # title: params[:title],
     content: params[:content],
     author: params[:author],
-    url: params[:url]
+    url: params[:url],
+    created_at: params[:created_at],
+    updated_at: params[:updated_at],
   )
 
   if @message.save
